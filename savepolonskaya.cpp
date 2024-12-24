@@ -37,33 +37,54 @@
 //}
 
 //chain
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    setlocale(LC_ALL, "RUS");
+//    int ans, a;
+//    cout << "Введите последовательность, оканчивающуюся нулем" << endl;
+//    cin >> a;
+//    bool f = false;
+//    for (int k = abs(a), sum = 0; k > 0; k /= 10) {
+//        sum += k % 10;
+//        if (sum > 14) f = true;
+//    }
+//    ans = a;
+//    while (a) {
+//        int temp = 0;
+//        for (int k = abs(a); k > 0; k /= 10) {
+//            temp += k % 10;
+//        }
+//        if (temp > 14 && a > ans) { ans = a; f = true; }
+//        cin >> a;
+//    }
+//    if (f) {
+//        cout << "Наибольшее число с суммой цифр >14 в последовательности: ";
+//        cout << ans;
+//    }
+//    else {
+//        cout << "Нет таких чисел";
+//    }
+//}
+
 #include <iostream>
 using namespace std;
-int main()
-{
+int main() { // нужна проверка
     setlocale(LC_ALL, "RUS");
-    int ans, a;
-    cout << "Введите последовательность, оканчивающуюся нулем" << endl;
-    cin >> a;
-    bool f = false;
-    for (int k = abs(a), sum = 0; k > 0; k /= 10) {
-        sum += k % 10;
-        if (sum > 14) f = true;
+    int n, a, b, c,d, x; float ans = 0;
+    cout << "Введите положительное число n: " << endl;
+    cin >> n;
+    cout << "Введите число x: " << endl;
+    cin >> x;
+    a = -1; b = 3 * x; c = 1; d = 1;
+    for (int i = 1; i <= n; i++) {
+        a *= (-1);
+        b *= (3*x);
+        c *= (i+1);
+        d *= (x * x);
+        ans += (a * b) / float(c*d);
     }
-    ans = a;
-    while (a) {
-        int temp = 0;
-        for (int k = abs(a); k > 0; k /= 10) {
-            temp += k % 10;
-        }
-        if (temp > 14 && a > ans) { ans = a; f = true; }
-        cin >> a;
-    }
-    if (f) {
-        cout << "Наибольшее число с суммой цифр >14 в последовательности: ";
-        cout << ans;
-    }
-    else {
-        cout << "Нет таких чисел";
-    }
+
+    cout << "Сумма ряда: " << ans;
 }
