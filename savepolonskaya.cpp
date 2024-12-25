@@ -70,7 +70,7 @@
 
 #include <iostream>
 using namespace std;
-int main() { // нужна проверка
+int main() { // проверено
     setlocale(LC_ALL, "RUS");
     int n, a, b, c,d, x; float ans = 0;
     cout << "Введите положительное число n: " << endl;
