@@ -1,40 +1,44 @@
 ﻿//funcs
-//#include <iostream>
-//using namespace std;
-//void get_matrix(int** a, int n, int m) {
-//    for (int i = 0; i < n; i++) {
-//        a[i] = new int[m];
-//        for (int j = 0; j < m; j++) {
-//            cin >> a[i][j];
-//        }
-//    }
-//}
-//float get_avg(int* a, int n) {
-//    int sum = 0;
-//    for (int i = 0; i < n; i++) {
-//        sum += a[i];
-//    }
-//    return float((sum / n));
-//}
-//void get_ans(int* res,int**a,int n,int m ) {
-//    for (int i = 0; i < n; i++) {
-//        res[i] = get_avg(a[i],m);
-//    }
-//}
-//int main()
-//{
-//    int n, m; cin >> n >> m;
-//    int** a = new int* [n];
-//    int* res=new int[n];
-//    get_matrix(a, n, m);
-//    get_ans(res, a, n, m);
-//    for (int i = 0; i < n; i++) {
-//        delete[] a[i];
-//    }
-//    delete[] a;
-//    delete[] res;
-//    return 0;
-//}
+#include <iostream>
+using namespace std;
+void get_matrix(float** a, int n, int m) {
+    for (int i = 0; i < n; i++) {
+        a[i] = new float[m];
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+}
+float get_avg(float* a, int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+    float avg = (sum / n);
+    return avg;
+}
+void get_ans(float* res,float**a,int n,int m ) {
+    for (int i = 0; i < n; i++) {
+        res[i] = get_avg(a[i],m);
+    }
+}
+int main()
+{
+    int n, m; cin >> n >> m;
+    float** a = new float* [n];
+    float* res=new float[n];
+    get_matrix(a, n, m);
+    get_ans(res, a, n, m);
+    for (int i = 0; i < n; i++) {
+        cout << res[i]<<endl;
+    }
+    for (int i = 0; i < n; i++) {
+        delete[] a[i];
+    }
+    delete[] a;
+    delete[] res;
+    return 0;
+}
 
 //chain
 //#include <iostream>
@@ -68,23 +72,23 @@
 //    }
 //}
 
-#include <iostream>
-using namespace std;
-int main() { // проверено
-    setlocale(LC_ALL, "RUS");
-    int n, a, b, c,d, x; float ans = 0;
-    cout << "Введите положительное число n: " << endl;
-    cin >> n;
-    cout << "Введите число x: " << endl;
-    cin >> x;
-    a = -1; b = 3 * x; c = 1; d = 1;
-    for (int i = 1; i <= n; i++) {
-        a *= (-1);
-        b *= (3*x);
-        c *= (i+1);
-        d *= (x * x);
-        ans += (a * b) / float(c*d);
-    }
-
-    cout << "Сумма ряда: " << ans;
-}
+//#include <iostream>
+//using namespace std;
+//int main() { // проверено
+//    setlocale(LC_ALL, "RUS");
+//    int n, a, b, c,d, x; float ans = 0;
+//    cout << "Введите положительное число n: " << endl;
+//    cin >> n;
+//    cout << "Введите число x: " << endl;
+//    cin >> x;
+//    a = -1; b = 3 * x; c = 1; d = 1;
+//    for (int i = 1; i <= n; i++) {
+//        a *= (-1);
+//        b *= (3*x);
+//        c *= (i+1);
+//        d *= (x * x);
+//        ans += (a * b) / float(c*d);
+//    }
+//
+//    cout << "Сумма ряда: " << ans;
+//}
